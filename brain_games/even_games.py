@@ -19,7 +19,8 @@ def even_game():
         if is_even(number) == user_answer:
             print('Correct!')
         else:
-            print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{is_even(number)}'")
+            print(f"'{user_answer}' is wrong answer ;(. Correct answer was "
+                  f"'{is_even(number)}'")
             print(f"Let's try again, {name}!")
             return
     print(f'Congratulations {name}!')

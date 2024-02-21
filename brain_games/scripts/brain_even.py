@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-import brain_games.scripts.brain_games
+from brain_games.even_games import even_game
 
 
 def main():
-    brain_games.scripts.brain_games.main()
+    print("Welcome to the Brain Games!")
+    even_game()
 
 
 if __name__ == '__main__':

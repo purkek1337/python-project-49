@@ -18,3 +18,6 @@ package-reinstall:
 
 lint:
 	poetry run flake8 brain_games
+
+run:
+	poetry run python -m brain_games.scripts.brain_even

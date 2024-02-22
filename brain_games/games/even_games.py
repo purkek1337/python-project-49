@@ -1,12 +1,5 @@
 from random import randint
-from brain_games.cli import welcome_user
-
-
-def is_even(number):  # функция проверки чётности числа
-    if number % 2 == 0:
-        return 'yes'
-    else:
-        return 'no'
+from brain_games.engine import is_even, welcome_user
 
 
 def even_game():

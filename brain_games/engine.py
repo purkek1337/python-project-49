@@ -4,7 +4,15 @@ from random import randint
 
 game_rules = ('Answer "yes" if the number is even, '
               'otherwise answer "no".',
-              'What is the result of the expression?')
+              'What is the result of the expression?',
+              'Find the greatest common divisor of given numbers.')
+
+"""
+Game rules:
+    0 - even_games
+    1 - calc_games
+    2 - gcd_games
+"""
 
 
 def welcome_user():  # функция приветствия
@@ -32,14 +40,14 @@ def answer_comp(correct_answer, name):  # функция сравнения от
         return 'wrong'
 
 
-def generate_question_even():  # функция генерации вопроса even_games
-    number = randint(1, 100)  # генерация вопроса
+def generate_question_even():  # генерации вопроса even_games
+    number = randint(1, 100)
     print(f'Question: {number}')
     return number
 
 
 def generate_question_calc():
-    operators = ('+', '-', '*')  # генерация вопроса
+    operators = ('+', '-', '*')  # генерация вопроса calc_games
     operator = operators[randint(0, 2)]
     a = randint(1, 100)
     b = randint(1, 100)
@@ -55,3 +63,7 @@ def generate_question_calc():
         print(f'Question: {a} * {b}')
         correct_answer = a * b
         return correct_answer
+
+
+def generate_question_gcd():  # генерации вопроса gcd_games
+    return 'wrong'

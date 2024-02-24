@@ -3,7 +3,8 @@ from brain_games.games.even_games import even_game
 
 
 def main():
-    even_game()
+    rounds = input('How many rounds: ')
+    even_game(int(rounds))
 
 
 if __name__ == '__main__':

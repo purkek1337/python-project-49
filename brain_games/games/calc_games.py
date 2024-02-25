@@ -9,7 +9,7 @@ def calc_game():
     while rounds_counter != 3:
         rounds_counter += 1
         correct_answer = generate_question_calc()
-        if answer_comparison(correct_answer, name) == 'wrong':  # если неправильно
+        if answer_comparison(correct_answer, name) == 'wrong':
             break
         if rounds_counter == 3:  # если все ответы верные
             print(f'Congratulations, {name}!')

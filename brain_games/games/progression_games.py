@@ -8,8 +8,8 @@ def progression_game():
     rounds_counter = 0  # счетчик раундов
     while rounds_counter != 3:  # цикл игры
         rounds_counter += 1
-        correct_answer = generate_question_progression()  # генерируем вопрос, возвращаем правильный ответ
-        if answer_comparison(correct_answer, name) == 'wrong':  # если неправильно
+        correct_answer = generate_question_progression()  # генерируем вопрос
+        if answer_comparison(correct_answer, name) == 'wrong':
             break
         if rounds_counter == 3:  # если все ответы верные
             print(f'Congratulations, {name}!')

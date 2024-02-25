@@ -5,13 +5,15 @@ from random import randint, choice
 game_rules = ('Answer "yes" if the number is even, '
               'otherwise answer "no".',
               'What is the result of the expression?',
-              'Find the greatest common divisor of given numbers.')
+              'Find the greatest common divisor of given numbers.',
+              'What number is missing in the progression?')
 
 """
 Game rules:
     0 - even_games
     1 - calc_games
     2 - gcd_games
+    3 - progression_games
 """
 
 
@@ -80,3 +82,20 @@ def generate_question_gcd():  # генерации вопроса gcd_games
             b = b % a
 
     return a + b
+
+
+def generate_question_progression():
+    progression = []
+    random_index = randint(1, 10)
+
+    for i in range(1, 100, randint(2, 10)):
+        if len(progression) == 10:
+            break
+        else:
+            progression.append(i)
+
+    correct_answer = progression[random_index]
+    progression[random_index] = '..'
+    print(f'Quesion: {progression}')
+
+    return correct_answer

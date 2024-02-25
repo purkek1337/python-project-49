@@ -3,8 +3,7 @@ from brain_games.games.prime_games import prime_game
 
 
 def main():
-    rounds = input('How many rounds: ')
-    prime_game(int(rounds))
+    prime_game()
 
 
 if __name__ == '__main__':

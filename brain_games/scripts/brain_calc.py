@@ -3,8 +3,7 @@ from brain_games.games.calc_games import calc_game
 
 
 def main():
-    rounds = input('How many rounds: ')
-    calc_game(int(rounds))
+    calc_game()
 
 
 if __name__ == '__main__':

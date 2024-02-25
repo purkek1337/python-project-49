@@ -1,4 +1,5 @@
-from brain_games.engine import (welcome_user, game_rules, answer_comparison, generate_question_gcd)
+from brain_games.engine import (welcome_user, game_rules, answer_comparison,
+                                generate_question_gcd)
 
 
 def gcd_game():

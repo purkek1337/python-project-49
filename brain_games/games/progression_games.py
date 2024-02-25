@@ -1,5 +1,6 @@
 from brain_games.engine import (welcome_user, game_rules,
-                                answer_comparison, generate_question_progression)
+                                answer_comparison,
+                                generate_question_progression)
 
 
 def progression_game():

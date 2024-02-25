@@ -52,6 +52,7 @@ def generate_question_calc():  # генерация вопроса calc_games
     operator = choice(('+', '-', '*'))
     a = randint(1, 100)
     b = randint(1, 100)
+
     match operator:
         case '+':
             print(f'Question: {a} + {b}')
@@ -62,8 +63,20 @@ def generate_question_calc():  # генерация вопроса calc_games
         case '*':
             print(f'Question: {a} * {b}')
             correct_answer = a * b
+
     return correct_answer
 
 
 def generate_question_gcd():  # генерации вопроса gcd_games
-    return 'wrong'
+    a = randint(1, 100)
+    b = randint(1, 100)
+
+    print(f'Question: {a} {b}')
+
+    while a != 0 and b != 0:
+        if a > b:
+            a = a % b
+        else:
+            b = b % a
+
+    return a + b

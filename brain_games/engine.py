@@ -88,14 +88,16 @@ def generate_question_progression():
     progression = []
     random_index = randint(1, 10)
 
-    for i in range(1, 100, randint(2, 10)):
+    for i in range(1, 150, randint(2, 10)):
         if len(progression) == 10:
             break
         else:
             progression.append(i)
 
     correct_answer = progression[random_index]
-    progression[random_index] = '..'
-    print(f'Quesion: {progression}')
 
+    progression[random_index] = '..'
+    progression_question = 'Question:', *progression
+
+    print(*progression_question)
     return correct_answer

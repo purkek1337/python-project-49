@@ -1,5 +1,5 @@
 import prompt
-from random import randint
+from random import randint, choice
 
 
 game_rules = ('Answer "yes" if the number is even, '
@@ -29,7 +29,7 @@ def is_even(number):  # функция проверки чётности чис�
         return 'no'
 
 
-def answer_comp(correct_answer, name):  # функция сравнения ответов
+def answer_comparison(correct_answer, name):  # функция сравнения ответов
     user_answer = input('Your answer: ')
     if str(correct_answer) == user_answer:
         print('Correct!')
@@ -41,28 +41,28 @@ def answer_comp(correct_answer, name):  # функция сравнения от
 
 
 def generate_question_even():  # генерации вопроса even_games
-    number = randint(1, 100)
-    print(f'Question: {number}')
-    return number
+    random_number = randint(1, 100)
+    correct_answer = is_even(random_number)
+    print(f'Question: {random_number}')
+    return correct_answer
 
 
-def generate_question_calc():
-    operators = ('+', '-', '*')  # генерация вопроса calc_games
-    operator = operators[randint(0, 2)]
+def generate_question_calc():  # генерация вопроса calc_games
+    correct_answer = ''
+    operator = choice(('+', '-', '*'))
     a = randint(1, 100)
     b = randint(1, 100)
-    if operator == '+':
-        print(f'Question: {a} + {b}')
-        correct_answer = a + b
-        return correct_answer
-    elif operator == '-':
-        print(f'Question: {a} - {b}')
-        correct_answer = a - b
-        return correct_answer
-    else:
-        print(f'Question: {a} * {b}')
-        correct_answer = a * b
-        return correct_answer
+    match operator:
+        case '+':
+            print(f'Question: {a} + {b}')
+            correct_answer = a + b
+        case '-':
+            print(f'Question: {a} - {b}')
+            correct_answer = a - b
+        case '*':
+            print(f'Question: {a} * {b}')
+            correct_answer = a * b
+    return correct_answer
 
 
 def generate_question_gcd():  # генерации вопроса gcd_games

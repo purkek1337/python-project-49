@@ -1,4 +1,4 @@
-from brain_games.engine import (welcome_user, game_rules, is_even, answer_comp,
+from brain_games.engine import (welcome_user, game_rules, answer_comparison,
                                 generate_question_even)
 
 
@@ -8,8 +8,8 @@ def even_game(rounds):
     rounds_counter = 0  # счетчик раундов
     while rounds_counter != rounds:  # цикл игры
         rounds_counter += 1  # счетчик раундов
-        correct_answer = is_even(generate_question_even())  # правильный ответ
-        if answer_comp(correct_answer, name) == 'wrong':  # если неправильно
+        correct_answer = generate_question_even()  # генерируем вопрос, возрвращаем правильный ответ
+        if answer_comparison(correct_answer, name) == 'wrong':  # если неправильно
             break
         if rounds_counter == rounds:  # если все ответы верные
             print(f'Congratulations, {name}!')

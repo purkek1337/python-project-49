@@ -1,4 +1,4 @@
-from brain_games.engine import (welcome_user, game_rules, answer_comp,
+from brain_games.engine import (welcome_user, game_rules, answer_comparison,
                                 generate_question_calc)
 
 
@@ -9,7 +9,7 @@ def calc_game(rounds):
     while rounds_counter != rounds:
         rounds_counter += 1
         correct_answer = generate_question_calc()
-        if answer_comp(correct_answer, name) == 'wrong':  # если неправильно
+        if answer_comparison(correct_answer, name) == 'wrong':  # если неправильно
             break
         if rounds_counter == rounds:  # если все ответы верные
             print(f'Congratulations, {name}!')

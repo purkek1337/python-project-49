@@ -86,7 +86,7 @@ def generate_question_gcd():  # генерации вопроса gcd_games
 
 def generate_question_progression():
     progression = []
-    random_index = randint(1, 10)
+    random_index = randint(0, 9)
 
     for i in range(1, 150, randint(2, 10)):
         if len(progression) == 10:

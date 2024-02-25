@@ -6,7 +6,8 @@ game_rules = ('Answer "yes" if the number is even, '
               'otherwise answer "no".',
               'What is the result of the expression?',
               'Find the greatest common divisor of given numbers.',
-              'What number is missing in the progression?')
+              'What number is missing in the progression?',
+              'Answer "yes" if given number is prime. Otherwise answer "no".')
 
 """
 Game rules:
@@ -14,6 +15,7 @@ Game rules:
     1 - calc_games
     2 - gcd_games
     3 - progression_games
+    4 - prime_games
 """
 
 
@@ -29,6 +31,17 @@ def is_even(number):  # функция проверки чётности чис�
         return 'yes'
     else:
         return 'no'
+
+
+def is_prime(number):  # Проверка простых чисел
+    divider = 2
+    if number < 2:
+        return 'no'
+    while divider <= number / 2:
+        if number % divider == 0:
+            return 'no'
+        divider += 1
+    return 'yes'
 
 
 def answer_comparison(correct_answer, name):  # функция сравнения ответов
@@ -100,4 +113,11 @@ def generate_question_progression():
     progression_question = 'Question:', *progression
 
     print(*progression_question)
+    return correct_answer
+
+
+def generate_question_prime():
+    random_number = randint(1, 100)
+    correct_answer = is_prime(random_number)
+    print(f'Question: {random_number}')
     return correct_answer
